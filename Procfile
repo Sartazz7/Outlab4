@@ -1,0 +1,1 @@
+web: gunicorn Outlab4.wsgi --log-file -

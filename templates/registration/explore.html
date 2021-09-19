@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}EXPLORE{% endblock %}
+
+{% block content2 %}
+<br>
+<br>
+{% endblock %}
+
+{% block content %}
+<div class="col-md-12 text-center">
+   <button class="btn btn-primary"  onclick="window.location.href='';">Explore</button>
+   <a href="{% url 'profile' id=login_user.id %}"><button class="btn btn-primary">My Profile</button></a>
+   <button class="btn btn-primary" onclick="window.location.href='{{HOST}}/accounts/login';">Logout</button>
+</div>
+<div class="container">
+    <ul>
+        {% for u in users %}
+            <li><a href="{% url 'profile' id=u.user_id %}"><button class="btn btn-outline-primary">{{ u.user.username }}</button></a></li>
+            <br>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

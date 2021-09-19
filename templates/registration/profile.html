@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}PROFILE{% endblock %}
+
+{% block content2 %}
+<br>
+<br>
+{% endblock %}
+
+{% block content %}
+<div class="col-md-12 text-center">
+   <button class="btn btn-primary"  onclick="window.location.href='{{HOST}}/accounts/explore';">Explore</button>
+   <a href="{% url 'profile' id=login_user.id %}"><button class="btn btn-primary">My Profile</button></a>
+   <button class="btn btn-primary" onclick="window.location.href='{{HOST}}/accounts/login';">Logout</button>
+</div>
+<div class="container">
+    <h2>{{name.user.first_name}} {{name.user.last_name}} (@{{name.user.username}})</h2>
+    <p>{{name.followers}} followers</p>
+    <p>Profile last updated : {{name.last_update}} {% if current %}<a href="{% url 'ownprofile' id=name.user_id %}">Update Now</a>{% endif %}</p>
+    {% for repo in repos %}
+    <li>{{repo.name}} - {{repo.stars}} stars</li>
+    {% endfor %}
+    
+</div>
+    
+{% endblock %}

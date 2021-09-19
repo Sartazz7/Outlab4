@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block content2 %}
+<br>
+<br>
+{% endblock %}
+{% block content %}
+<div class="col-md-12 text-center">
+   <button class="btn btn-primary"  onclick="window.location.href='{{HOST}}/accounts/signup';">Signup</button>
+   <button class="btn btn-primary" onclick="window.location.href='{{HOST}}/accounts/login';">Login</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container" >
+	<p class="h2">Login to Github Profile</p>
+<form method="post">
+	{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+{% endblock %}
