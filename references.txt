@@ -1,0 +1,6 @@
+Outlab 4 : Django, HTML, PostgreSQL
+
+Refrences :
+1) Online tutorials given in the Outlab document.
+2) Googling a lot of doubts to clear them.
+3) Seen You Tube videos to get some insights.
